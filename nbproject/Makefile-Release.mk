@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/algorithm_search.o \
 	${OBJECTDIR}/algorithm_sort.o \
 	${OBJECTDIR}/hl_log.o \
 	${OBJECTDIR}/main.o
@@ -63,6 +64,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/algorithm.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/algorithm ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/algorithm_search.o: algorithm_search.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/algorithm_search.o algorithm_search.cpp
 
 ${OBJECTDIR}/algorithm_sort.o: algorithm_sort.cpp 
 	${MKDIR} -p ${OBJECTDIR}

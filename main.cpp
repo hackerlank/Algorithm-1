@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "algorithm_sort.h"
+#include "algorithm_search.h"
 #include "hl_log.h"
 
 using namespace std;
